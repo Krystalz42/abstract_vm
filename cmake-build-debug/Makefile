@@ -123,33 +123,6 @@ avm/fast:
 	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/build
 .PHONY : avm/fast
 
-incs/avm/AvmParser.o: incs/avm/AvmParser.cpp.o
-
-.PHONY : incs/avm/AvmParser.o
-
-# target to build an object file
-incs/avm/AvmParser.cpp.o:
-	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o
-.PHONY : incs/avm/AvmParser.cpp.o
-
-incs/avm/AvmParser.i: incs/avm/AvmParser.cpp.i
-
-.PHONY : incs/avm/AvmParser.i
-
-# target to preprocess a source file
-incs/avm/AvmParser.cpp.i:
-	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.i
-.PHONY : incs/avm/AvmParser.cpp.i
-
-incs/avm/AvmParser.s: incs/avm/AvmParser.cpp.s
-
-.PHONY : incs/avm/AvmParser.s
-
-# target to generate assembly for a file
-incs/avm/AvmParser.cpp.s:
-	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.s
-.PHONY : incs/avm/AvmParser.cpp.s
-
 srcs/avm/AvmController.o: srcs/avm/AvmController.cpp.o
 
 .PHONY : srcs/avm/AvmController.o
@@ -204,6 +177,33 @@ srcs/avm/AvmModels.cpp.s:
 	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.s
 .PHONY : srcs/avm/AvmModels.cpp.s
 
+srcs/avm/AvmParser.o: srcs/avm/AvmParser.cpp.o
+
+.PHONY : srcs/avm/AvmParser.o
+
+# target to build an object file
+srcs/avm/AvmParser.cpp.o:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o
+.PHONY : srcs/avm/AvmParser.cpp.o
+
+srcs/avm/AvmParser.i: srcs/avm/AvmParser.cpp.i
+
+.PHONY : srcs/avm/AvmParser.i
+
+# target to preprocess a source file
+srcs/avm/AvmParser.cpp.i:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.i
+.PHONY : srcs/avm/AvmParser.cpp.i
+
+srcs/avm/AvmParser.s: srcs/avm/AvmParser.cpp.s
+
+.PHONY : srcs/avm/AvmParser.s
+
+# target to generate assembly for a file
+srcs/avm/AvmParser.cpp.s:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s
+.PHONY : srcs/avm/AvmParser.cpp.s
+
 srcs/main.o: srcs/main.cpp.o
 
 .PHONY : srcs/main.o
@@ -240,15 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... avm"
-	@echo "... incs/avm/AvmParser.o"
-	@echo "... incs/avm/AvmParser.i"
-	@echo "... incs/avm/AvmParser.s"
 	@echo "... srcs/avm/AvmController.o"
 	@echo "... srcs/avm/AvmController.i"
 	@echo "... srcs/avm/AvmController.s"
 	@echo "... srcs/avm/AvmModels.o"
 	@echo "... srcs/avm/AvmModels.i"
 	@echo "... srcs/avm/AvmModels.s"
+	@echo "... srcs/avm/AvmParser.o"
+	@echo "... srcs/avm/AvmParser.i"
+	@echo "... srcs/avm/AvmParser.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

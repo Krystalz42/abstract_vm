@@ -87,6 +87,9 @@
 		<Unit filename="/Users/alexandreroulin/work/avm/incs/IOperand.hpp">
 			<Option target="avm"/>
 		</Unit>
+		<Unit filename="/Users/alexandreroulin/work/avm/incs/MutantStack.hpp">
+			<Option target="avm"/>
+		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/incs/Operand.hpp">
 			<Option target="avm"/>
 		</Unit>
@@ -99,9 +102,6 @@
 		<Unit filename="/Users/alexandreroulin/work/avm/incs/avm/AvmModels.hpp">
 			<Option target="avm"/>
 		</Unit>
-		<Unit filename="/Users/alexandreroulin/work/avm/incs/avm/AvmParser.cpp">
-			<Option target="avm"/>
-		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/incs/avm/AvmParser.hpp">
 			<Option target="avm"/>
 		</Unit>
@@ -109,6 +109,9 @@
 			<Option target="avm"/>
 		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/srcs/avm/AvmModels.cpp">
+			<Option target="avm"/>
+		</Unit>
+		<Unit filename="/Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp">
 			<Option target="avm"/>
 		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/srcs/main.cpp">

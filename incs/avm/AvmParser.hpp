@@ -18,24 +18,26 @@ class AvmParser {
 public:
 	AvmParser();
 
-	void fromFile(std::ifstream &file) const;
+	void fromFile(std::ifstream &file);
 
-	void fromStdin() const;
+	void fromStdin();
 
 	virtual ~AvmParser();
 
 private:
-	AvmController								ac;
-	AvmModels									am;
+	AvmController ac;
+	AvmModels am;
 	std::map<std::string, eInstruction> const _instruction;
 	std::map<std::string, eOperandType> const _operand;
 
 	eInstruction parseInstruction(std::string const &s) const;
 
 	eOperandType parseOperandType(std::string const &s) const;
-	void parseString(std::string const &s) const;
+
+	void parseString(std::string const &s);
 
 	std::string parseValue(std::string const &s) const;
+
 	const std::map<std::string, eInstruction>
 
 	createInstructionMap();

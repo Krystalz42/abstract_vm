@@ -11,7 +11,6 @@ enum eOperandType {
 	INT_32,		//2
 	FLOAT,		//3
 	DOUBLE,		//4
-	NONE		//5
 };
 
 enum eInstruction {

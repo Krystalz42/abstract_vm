@@ -3,7 +3,7 @@
 //
 
 #include <avm/AvmModels.hpp>
-
+#include <Operand.hpp>
 /** Static **/
 /** Constructor **/
 
@@ -30,23 +30,23 @@ const std::map<eOperandType, AvmModels::function> AvmModels::createData() {
 }
 
 IOperand const *AvmModels::createInt8(std::string const &value) const {
-	return new Operand<int8_t>(value);
+	return new Operand<int8_t>(INT_8, value);
 }
 
 IOperand const *AvmModels::createInt16(std::string const &value) const {
-	return new Operand<int16_t>(value);
+	return new Operand<int16_t>(INT_16, value);
 }
 
 IOperand const *AvmModels::createInt32(std::string const &value) const {
-	return new Operand<int32_t>(value);
+	return new Operand<int32_t>(INT_32, value);
 }
 
 IOperand const *AvmModels::createFloat(std::string const &value) const {
-	return new Operand<float>(value);
+	return new Operand<float>(FLOAT, value);
 }
 
 IOperand const *AvmModels::createDouble(std::string const &value) const {
-	return new Operand<double>(value);
+	return new Operand<double>(DOUBLE, value);
 }
 
 

@@ -2,7 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/avm.dir/srcs/main.cpp.o"
   "CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o"
   "CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o"
-  "CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o"
+  "CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o"
   "avm.pdb"
   "avm"
 )

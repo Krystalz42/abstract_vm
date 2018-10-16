@@ -14,15 +14,15 @@ public:
 
 	virtual eOperandType getType() const = 0;
 
-	virtual IOperand const *operator+(IOperand const &) = 0;
+	virtual IOperand const *operator+(IOperand const &) const= 0;
 
-	virtual IOperand const *operator-(IOperand const &) = 0;
+	virtual IOperand const *operator-(IOperand const &)const = 0;
 
-	virtual IOperand const *operator*(IOperand const &) = 0;
+	virtual IOperand const *operator*(IOperand const &)const = 0;
 
-	virtual IOperand const *operator/(IOperand const &) = 0;
+	virtual IOperand const *operator/(IOperand const &) const= 0;
 
-	virtual IOperand const *operator%(IOperand const &) = 0;
+	virtual IOperand const *operator%(IOperand const &)const = 0;
 
 	virtual std::string const &toString() const = 0;
 

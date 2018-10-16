@@ -1,5 +1,8 @@
 push int32(42)
 push int16(42)
-mul
-pop
+add
 dump
+push int8(42)
+print
+sub
+exit

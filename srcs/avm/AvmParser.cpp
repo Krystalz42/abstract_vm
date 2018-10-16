@@ -3,6 +3,7 @@
 //
 
 #include <avm/AvmParser.hpp>
+#include <regex>
 
 
 /** Static **/
@@ -12,7 +13,7 @@ AvmParser::AvmParser() : _instruction(createInstructionMap()),
 
 /** Public **/
 
-void AvmParser::fromFile(std::ifstream &file) const {
+void AvmParser::fromFile(std::ifstream &file)  {
 	std::string buffer;
 
 	while (!file.eof()) {
@@ -22,27 +23,33 @@ void AvmParser::fromFile(std::ifstream &file) const {
 	}
 }
 
-void AvmParser::fromStdin() const {
+void AvmParser::fromStdin()  {
+	std::string buffer;
 
+	while (!std::cin.eof()) {
+		std::getline(std::cin, buffer);
+		if (!buffer.empty())
+			parseString(buffer);
+	}
 }
 
 /** Private **/
 
-void AvmParser::parseString(std::string const &s) const {
+void AvmParser::parseString(std::string const &s)  {
 	eInstruction ei;
+
 	try {
 		ei = parseInstruction(s);
-		std::cout << "Instruction  : " << ei << std::endl;
+
 		if (ei == PUSH || ei == ASSERT) {
+
 			eOperandType eop = parseOperandType(s);
 			std::string sv = parseValue(s);
-			am.createOperand(eop, sv);
 
-			ac.execute(ei, eop, sv);
+			ac.execute(ei, am.createOperand(eop, sv));
 
-			std::cout << "Operand : " << parseOperandType(s) << std::endl;
-			std::cout << "Value : " << parseValue(s) << std::endl;
-		}
+		} else
+			ac.execute(ei);
 
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -67,11 +74,13 @@ eOperandType AvmParser::parseOperandType(std::string const &s) const {
 }
 
 std::string AvmParser::parseValue(std::string const &s) const {
-	std::string ss = boost::regex_replace(s,
-			boost::regex(R"(^.*?\([^\d]*(\d+)[^\d]*\).*$)"),
-			std::string("\\1")
-	);
-	return ss;
+	std::regex rgx(R"([a-z]*\s[a-z]*[0-9]*\(([0-9]+\.?[0-9]+)\))");
+	std::smatch match;
+	//
+
+	if (std::regex_search(s.begin(), s.end(), match, rgx))
+		return match[1];
+	throw std::invalid_argument("value bad format");
 }
 
 std::map<std::string, eInstruction> const AvmParser::createInstructionMap() {

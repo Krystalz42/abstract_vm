@@ -11,7 +11,28 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc878da3-e7bd-483f-be58-0ce87014b7ca" name="Default Changelist" comment="" />
+    <list default="true" id="bc878da3-e7bd-483f-be58-0ce87014b7ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/incs/MutantStack.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/avm.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/avm.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/avm.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/IOperand.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/incs/IOperand.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/Operand.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/incs/Operand.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/avm.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/incs/avm.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/avm/AvmController.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/incs/avm/AvmController.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/avm/AvmModels.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/incs/avm/AvmModels.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/avm/AvmParser.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/incs/avm/AvmParser.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/avm/AvmController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/avm/AvmController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/avm/AvmModels.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/avm/AvmModels.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/avm/AvmParser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/avm/AvmParser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.avm" beforeDir="false" afterPath="$PROJECT_DIR$/test.avm" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,30 +53,30 @@
         <counts>
           <entry key="Makefile" value="2" />
           <entry key="cpp" value="8" />
-          <entry key="hpp" value="12" />
+          <entry key="hpp" value="15" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="1" />
-          <entry key="ObjectiveC" value="20" />
+          <entry key="ObjectiveC" value="23" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="110" />
-          <entry key="cpp" value="2088" />
-          <entry key="hpp" value="1755" />
+          <entry key="cpp" value="3377" />
+          <entry key="hpp" value="2700" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="6" />
-          <entry key="Doxygen file" value="11" />
-          <entry key="ObjectiveC" value="3832" />
+          <entry key="Doxygen file" value="14" />
+          <entry key="ObjectiveC" value="6063" />
           <entry key="PLAIN_TEXT" value="110" />
         </counts>
       </usages-collector>
@@ -66,17 +87,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/srcs/avm/AvmParser.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Makefile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="48" column="25" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="25" />
+            <state relative-caret-position="-195">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+              <folding>
+                <element signature="e#53#81#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/incs/avm.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+            <state relative-caret-position="285">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -93,32 +108,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/incs/avm/AvmParser.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="272">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#124#142#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/srcs/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/incs/Operand.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="11" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="11" />
-              <folding>
-                <element signature="e#135#147#0" expanded="true" />
-                <element signature="e#793#805#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,10 +120,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/incs/avm/AvmModels.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="165">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/incs/Operand.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="668">
+              <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
               <folding>
-                <element signature="e#128#151#0" expanded="true" />
+                <element signature="e#119#147#0" expanded="true" />
+                <element signature="e#135#147#0" expanded="true" />
+                <element signature="e#802#814#0" expanded="true" />
+                <element signature="e#1092#1104#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,8 +144,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/srcs/avm/AvmModels.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+            <state relative-caret-position="648">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+              <folding>
+                <element signature="e#53#81#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,10 +156,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/incs/avm/AvmController.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="310">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding>
-                <element signature="e#121#139#0" expanded="true" />
+                <element signature="e#139#157#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,8 +168,36 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/srcs/avm/AvmController.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="450">
+              <caret line="110" column="74" selection-start-line="110" selection-start-column="74" selection-end-line="110" selection-end-column="74" />
+              <folding>
+                <element signature="e#53#85#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/incs/MutantStack.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <folding>
+                <element signature="e#169#185#0" expanded="true" />
+                <element signature="e#251#263#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/incs/IOperand.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
+              <folding>
+                <element signature="e#104#122#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,12 +213,28 @@
       <find>string</find>
       <find>AvmParser</find>
       <find>Operand</find>
+      <find>void</find>
+      <find>()</find>
+      <find>const;</find>
+      <find>const {</find>
+      <find>this</find>
+      <find>dump</find>
+      <find>return nullptr;</find>
+      <find>&amp;</find>
     </findStrings>
     <replaceStrings>
       <replace>_d</replace>
       <replace>s</replace>
       <replace>std::string</replace>
+      <replace>void _</replace>
+      <replace>(IOperand const *)</replace>
+      <replace>;</replace>
+      <replace>{</replace>
+      <replace>&amp;io</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -190,17 +242,18 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/incs/AvmParser.hpp" />
         <option value="$PROJECT_DIR$/incs/AvmController.hpp" />
-        <option value="$PROJECT_DIR$/incs/IOperand.hpp" />
-        <option value="$PROJECT_DIR$/incs/Operand.hpp" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/srcs/main.cpp" />
         <option value="$PROJECT_DIR$/incs/avm.hpp" />
+        <option value="$PROJECT_DIR$/incs/avm/AvmParser.hpp" />
+        <option value="$PROJECT_DIR$/incs/MutantStack.hpp" />
+        <option value="$PROJECT_DIR$/incs/IOperand.hpp" />
+        <option value="$PROJECT_DIR$/incs/avm/AvmModels.hpp" />
+        <option value="$PROJECT_DIR$/srcs/avm/AvmModels.cpp" />
+        <option value="$PROJECT_DIR$/srcs/avm/AvmParser.cpp" />
         <option value="$PROJECT_DIR$/incs/avm/AvmController.hpp" />
         <option value="$PROJECT_DIR$/srcs/avm/AvmController.cpp" />
-        <option value="$PROJECT_DIR$/srcs/avm/AvmModels.cpp" />
-        <option value="$PROJECT_DIR$/incs/avm/AvmModels.hpp" />
-        <option value="$PROJECT_DIR$/srcs/avm/AvmParser.cpp" />
-        <option value="$PROJECT_DIR$/incs/avm/AvmParser.hpp" />
-        <option value="$PROJECT_DIR$/srcs/main.cpp" />
+        <option value="$PROJECT_DIR$/incs/Operand.hpp" />
       </list>
     </option>
   </component>
@@ -214,6 +267,7 @@
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -306,19 +360,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539687425566</updated>
-      <workItem from="1539687426647" duration="9577000" />
+      <workItem from="1539687426647" duration="19539000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9577000" />
+    <option name="totallyTimeSpent" value="19539000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="944" height="900" extended-state="6" />
+    <frame x="0" y="0" width="876" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944568" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26978418" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
@@ -352,31 +406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/incs/IOperand.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/incs/Operand.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="11" />
-          <folding>
-            <element signature="e#135#147#0" expanded="true" />
-            <element signature="e#793#805#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/incs/avm.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -384,61 +413,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/incs/avm/AvmController.hpp">
+    <entry file="file://$PROJECT_DIR$/srcs/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/incs/MutantStack.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
-            <element signature="e#121#139#0" expanded="true" />
+            <element signature="e#169#185#0" expanded="true" />
+            <element signature="e#251#263#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/incs/avm/AvmModels.hpp">
+    <entry file="file://$PROJECT_DIR$/incs/avm.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="285">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/incs/IOperand.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="60" selection-end-line="24" selection-end-column="60" />
           <folding>
-            <element signature="e#128#151#0" expanded="true" />
+            <element signature="e#104#122#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/avm/AvmController.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/avm/AvmModels.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/avm/AvmParser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/incs/avm/AvmParser.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="272">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#124#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/srcs/main.cpp">
+    <entry file="file://$PROJECT_DIR$/incs/avm/AvmController.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="310">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="e#139#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/avm/AvmParser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#53#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/avm/AvmController.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="110" column="74" selection-start-line="110" selection-start-column="74" selection-end-line="110" selection-end-column="74" />
+          <folding>
+            <element signature="e#53#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/incs/avm/AvmModels.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/srcs/avm/AvmModels.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="e#53#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/incs/Operand.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+          <folding>
+            <element signature="e#119#147#0" expanded="true" />
+            <element signature="e#135#147#0" expanded="true" />
+            <element signature="e#802#814#0" expanded="true" />
+            <element signature="e#1092#1104#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

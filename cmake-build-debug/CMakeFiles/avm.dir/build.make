@@ -96,25 +96,25 @@ CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/avm/AvmModels.cpp -o CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.s
 
-CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o: CMakeFiles/avm.dir/flags.make
-CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o: ../incs/avm/AvmParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o -c /Users/alexandreroulin/work/avm/incs/avm/AvmParser.cpp
+CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o: CMakeFiles/avm.dir/flags.make
+CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o: ../srcs/avm/AvmParser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o -c /Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp
 
-CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandreroulin/work/avm/incs/avm/AvmParser.cpp > CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.i
+CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp > CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.i
 
-CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/incs/avm/AvmParser.cpp -o CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.s
+CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp -o CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s
 
 # Object files for target avm
 avm_OBJECTS = \
 "CMakeFiles/avm.dir/srcs/main.cpp.o" \
 "CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o" \
 "CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o" \
-"CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o"
+"CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o"
 
 # External object files for target avm
 avm_EXTERNAL_OBJECTS =
@@ -122,7 +122,7 @@ avm_EXTERNAL_OBJECTS =
 avm: CMakeFiles/avm.dir/srcs/main.cpp.o
 avm: CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o
 avm: CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o
-avm: CMakeFiles/avm.dir/incs/avm/AvmParser.cpp.o
+avm: CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o
 avm: CMakeFiles/avm.dir/build.make
 avm: CMakeFiles/avm.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable avm"

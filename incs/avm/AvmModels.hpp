@@ -7,8 +7,9 @@
 
 //Create models data
 
+
+#include <avm.hpp>
 #include <IOperand.hpp>
-#include <Operand.hpp>
 #include <map>
 
 class AvmModels {

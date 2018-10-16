@@ -5,30 +5,39 @@
 #ifndef AVM_OPERAND_HPP
 #define AVM_OPERAND_HPP
 
+#include <avm/AvmModels.hpp>
+#include <iostream>
 #include "IOperand.hpp"
 
 template<typename T>
 class Operand : virtual public IOperand {
 private:
-	Operand() = delete;
+
 	T _value;
-	std::string		_value_string;
+	eOperandType _type;
+	std::string _value_string;
+	AvmModels am;
+
+	Operand();
+
 public:
-	Operand(std::string const &value);
+	Operand(IOperand const *);
+
+	Operand(eOperandType, std::string const &);
 
 	int getPrecision() const override;
 
 	eOperandType getType() const override;
 
-	const IOperand *operator+(IOperand const &operand) override;
+	const IOperand *operator+(IOperand const &operand) const override;
 
-	const IOperand *operator-(IOperand const &operand) override;
+	const IOperand *operator-(IOperand const &operand) const override;
 
-	const IOperand *operator*(IOperand const &operand) override;
+	const IOperand *operator*(IOperand const &operand) const override;
 
-	const IOperand *operator/(IOperand const &operand) override;
+	const IOperand *operator/(IOperand const &operand) const override;
 
-	const IOperand *operator%(IOperand const &operand) override;
+	const IOperand *operator%(IOperand const &operand) const override;
 
 	const std::string &toString() const override;
 };
@@ -37,8 +46,19 @@ public:
 /** Constructor **/
 
 template<typename T>
-Operand<T>::Operand(std::string const &value) : _value(std::stod(value)), _value_string(value) {
-	//TODO Overflow Underflow
+Operand<T>::Operand(eOperandType type, std::string const &s)
+		:    _value(std::stod(s)),
+			 _type(type),
+			 _value_string(s) {
+
+}
+
+template<typename T>
+Operand<T>::Operand(IOperand const *io)
+		: _value(std::stod(io->toString())),
+		  _type(io->getType()),
+		  _value_string(io->toString()) {
+
 }
 
 /** Public **/
@@ -49,7 +69,7 @@ int Operand<T>::getPrecision() const {
 
 template<typename T>
 eOperandType Operand<T>::getType() const {
-	return DOUBLE;
+	return _type;
 }
 
 template<typename T>
@@ -60,29 +80,31 @@ const std::string &Operand<T>::toString() const {
 /** Operator **/
 
 template<typename T>
-const IOperand *Operand<T>::operator+(IOperand const &) {
+const IOperand *Operand<T>::operator+(IOperand const &io) const {
+	auto &e = static_cast<Operand<double>>(&io);
+//	return am.createOperand(_type, std::to_string(_value + e._value));
+}
+
+template<typename T>
+const IOperand *Operand<T>::operator-(IOperand const &) const {
 	return nullptr;
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator-(IOperand const &) {
+const IOperand *Operand<T>::operator*(IOperand const &) const {
 	return nullptr;
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator*(IOperand const &) {
+const IOperand *Operand<T>::operator/(IOperand const &) const {
 	return nullptr;
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator/(IOperand const &) {
+const IOperand *Operand<T>::operator%(IOperand const &) const {
 	return nullptr;
 }
 
-template<typename T>
-const IOperand *Operand<T>::operator%(IOperand const &) {
-	return nullptr;
-}
 
 /** Destructor **/
 
