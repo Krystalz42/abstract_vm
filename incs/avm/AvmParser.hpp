@@ -1,0 +1,46 @@
+//
+// Created by Alexandre ROULIN on 16/10/2018.
+//
+
+#ifndef AVM_AVMPARSER_HPP
+#define AVM_AVMPARSER_HPP
+
+//Read file/stdin
+#include <fstream>
+#include <map>
+#include <avm.hpp>
+#include "AvmController.hpp"
+#include "AvmModels.hpp"
+#include <boost/regex.hpp>
+#include <iostream>
+
+class AvmParser {
+public:
+	AvmParser();
+
+	void fromFile(std::ifstream &file) const;
+
+	void fromStdin() const;
+
+	virtual ~AvmParser();
+
+private:
+	AvmController								ac;
+	AvmModels									am;
+	std::map<std::string, eInstruction> const _instruction;
+	std::map<std::string, eOperandType> const _operand;
+
+	eInstruction parseInstruction(std::string const &s) const;
+
+	eOperandType parseOperandType(std::string const &s) const;
+	void parseString(std::string const &s) const;
+
+	std::string parseValue(std::string const &s) const;
+	const std::map<std::string, eInstruction>
+
+	createInstructionMap();
+
+	const std::map<std::string, eOperandType> createOperandMap();
+};
+
+#endif //AVM_AVMPARSER_HPP
