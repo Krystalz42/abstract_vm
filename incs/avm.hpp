@@ -5,6 +5,10 @@
 #ifndef AVM_AVM_HPP
 #define AVM_AVM_HPP
 
+#define	OPT_VISU 1
+#define	OPT_SLOW 2
+#define	OPT_FILE 4
+
 enum eOperandType {
 	INT_8,		//0
 	INT_16,		//1
@@ -24,7 +28,11 @@ enum eInstruction {
 	DIV,		//7
 	MOD,		//8
 	PRINT,		//9
-	EXIT		//10
+	EXIT,		//10
+	SWAP,		//11
+	MAX,		//12
+	MIN,		//13
+	AVG,		//14
 };
 
 #endif //AVM_AVM_HPP

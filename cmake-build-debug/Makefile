@@ -123,6 +123,33 @@ avm/fast:
 	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/build
 .PHONY : avm/fast
 
+srcs/AvmException.o: srcs/AvmException.cpp.o
+
+.PHONY : srcs/AvmException.o
+
+# target to build an object file
+srcs/AvmException.cpp.o:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/AvmException.cpp.o
+.PHONY : srcs/AvmException.cpp.o
+
+srcs/AvmException.i: srcs/AvmException.cpp.i
+
+.PHONY : srcs/AvmException.i
+
+# target to preprocess a source file
+srcs/AvmException.cpp.i:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/AvmException.cpp.i
+.PHONY : srcs/AvmException.cpp.i
+
+srcs/AvmException.s: srcs/AvmException.cpp.s
+
+.PHONY : srcs/AvmException.s
+
+# target to generate assembly for a file
+srcs/AvmException.cpp.s:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/AvmException.cpp.s
+.PHONY : srcs/AvmException.cpp.s
+
 srcs/avm/AvmController.o: srcs/avm/AvmController.cpp.o
 
 .PHONY : srcs/avm/AvmController.o
@@ -204,6 +231,33 @@ srcs/avm/AvmParser.cpp.s:
 	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s
 .PHONY : srcs/avm/AvmParser.cpp.s
 
+srcs/avm/AvmView.o: srcs/avm/AvmView.cpp.o
+
+.PHONY : srcs/avm/AvmView.o
+
+# target to build an object file
+srcs/avm/AvmView.cpp.o:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o
+.PHONY : srcs/avm/AvmView.cpp.o
+
+srcs/avm/AvmView.i: srcs/avm/AvmView.cpp.i
+
+.PHONY : srcs/avm/AvmView.i
+
+# target to preprocess a source file
+srcs/avm/AvmView.cpp.i:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.i
+.PHONY : srcs/avm/AvmView.cpp.i
+
+srcs/avm/AvmView.s: srcs/avm/AvmView.cpp.s
+
+.PHONY : srcs/avm/AvmView.s
+
+# target to generate assembly for a file
+srcs/avm/AvmView.cpp.s:
+	$(MAKE) -f CMakeFiles/avm.dir/build.make CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.s
+.PHONY : srcs/avm/AvmView.cpp.s
+
 srcs/main.o: srcs/main.cpp.o
 
 .PHONY : srcs/main.o
@@ -240,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... avm"
+	@echo "... srcs/AvmException.o"
+	@echo "... srcs/AvmException.i"
+	@echo "... srcs/AvmException.s"
 	@echo "... srcs/avm/AvmController.o"
 	@echo "... srcs/avm/AvmController.i"
 	@echo "... srcs/avm/AvmController.s"
@@ -249,6 +306,9 @@ help:
 	@echo "... srcs/avm/AvmParser.o"
 	@echo "... srcs/avm/AvmParser.i"
 	@echo "... srcs/avm/AvmParser.s"
+	@echo "... srcs/avm/AvmView.o"
+	@echo "... srcs/avm/AvmView.i"
+	@echo "... srcs/avm/AvmView.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

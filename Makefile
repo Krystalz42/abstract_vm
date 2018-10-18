@@ -44,7 +44,9 @@ NAME		= avm
 
 SRCS = \
 			main.cpp														\
+			AvmException.cpp												\
 			avm/AvmController.cpp											\
+			avm/AvmView.cpp													\
 			avm/AvmModels.cpp												\
 			avm/AvmParser.cpp												\
 # ---------------------------------------------------------------------------- #
@@ -75,18 +77,17 @@ LIBS		= \
 LDFLAGS		= \
 
 LDLIBS		= \
-			  -lboost_regex							\
-#			  -lncurses								\
+			  -lncurses								\
 
 CPPFLAGS	= \
 			  -I$(DIR_INCS)							\
 
 CFLAGS		= \
-			-Wall -Werror -Wextra					\
 			-std=c++14						\
 			-fsanitize=address					\
 			-g3							\
-			
+#			-Wall -Werror -Wextra					\
+
 
 # ---------------------------------------------------------------------------- #
 # /!\ SOURCE NORMALIZATION AND COMPILATION RULES /!\                           #

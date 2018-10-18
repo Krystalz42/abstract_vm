@@ -12,10 +12,20 @@
 #include <stack>
 #include <MutantStack.hpp>
 #include <map>
+#include <avm/AvmView.hpp>
 
 class AvmController {
 private:
+
+	int _option;
+
 	MutantStack<IOperand const *> _stack;
+
+	AvmModels _am;
+
+	AvmView		*_av;
+
+	std::string			buffer;
 
 	typedef void (AvmController::*function)(IOperand const *);
 
@@ -45,6 +55,14 @@ private:
 
 	void _sub(IOperand const *);
 
+	void _swap(IOperand const *);
+
+	void _max(IOperand const *);
+
+	void _min(IOperand const *);
+
+	void _avg(IOperand const *);
+
 	void _mul(IOperand const *);
 
 	void _div(IOperand const *);
@@ -55,12 +73,21 @@ private:
 
 	void _exit(IOperand const *);
 
+public:
+	AvmView *getAv() const;
+
+private:
+
 	static void print(IOperand const *);
 
 public:
-	AvmController();
+	AvmController() = delete;
+
+	explicit AvmController(int option);
 
 	void execute(eInstruction, IOperand const * = nullptr);
+
+	virtual ~AvmController();
 
 
 };

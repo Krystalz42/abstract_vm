@@ -57,22 +57,9 @@ include CMakeFiles/avm.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/avm.dir/flags.make
 
-CMakeFiles/avm.dir/srcs/main.cpp.o: CMakeFiles/avm.dir/flags.make
-CMakeFiles/avm.dir/srcs/main.cpp.o: ../srcs/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/avm.dir/srcs/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/main.cpp.o -c /Users/alexandreroulin/work/avm/srcs/main.cpp
-
-CMakeFiles/avm.dir/srcs/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avm.dir/srcs/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandreroulin/work/avm/srcs/main.cpp > CMakeFiles/avm.dir/srcs/main.cpp.i
-
-CMakeFiles/avm.dir/srcs/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/main.cpp -o CMakeFiles/avm.dir/srcs/main.cpp.s
-
 CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o: CMakeFiles/avm.dir/flags.make
 CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o: ../srcs/avm/AvmController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o -c /Users/alexandreroulin/work/avm/srcs/avm/AvmController.cpp
 
 CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.s: cmake_force
 
 CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o: CMakeFiles/avm.dir/flags.make
 CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o: ../srcs/avm/AvmModels.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o -c /Users/alexandreroulin/work/avm/srcs/avm/AvmModels.cpp
 
 CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.s: cmake_force
 
 CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o: CMakeFiles/avm.dir/flags.make
 CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o: ../srcs/avm/AvmParser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o -c /Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp
 
 CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.i: cmake_force
@@ -109,23 +96,66 @@ CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp -o CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.s
 
+CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o: CMakeFiles/avm.dir/flags.make
+CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o: ../srcs/avm/AvmView.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o -c /Users/alexandreroulin/work/avm/srcs/avm/AvmView.cpp
+
+CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandreroulin/work/avm/srcs/avm/AvmView.cpp > CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.i
+
+CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/avm/AvmView.cpp -o CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.s
+
+CMakeFiles/avm.dir/srcs/AvmException.cpp.o: CMakeFiles/avm.dir/flags.make
+CMakeFiles/avm.dir/srcs/AvmException.cpp.o: ../srcs/AvmException.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/avm.dir/srcs/AvmException.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/AvmException.cpp.o -c /Users/alexandreroulin/work/avm/srcs/AvmException.cpp
+
+CMakeFiles/avm.dir/srcs/AvmException.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avm.dir/srcs/AvmException.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandreroulin/work/avm/srcs/AvmException.cpp > CMakeFiles/avm.dir/srcs/AvmException.cpp.i
+
+CMakeFiles/avm.dir/srcs/AvmException.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/AvmException.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/AvmException.cpp -o CMakeFiles/avm.dir/srcs/AvmException.cpp.s
+
+CMakeFiles/avm.dir/srcs/main.cpp.o: CMakeFiles/avm.dir/flags.make
+CMakeFiles/avm.dir/srcs/main.cpp.o: ../srcs/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/avm.dir/srcs/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/avm.dir/srcs/main.cpp.o -c /Users/alexandreroulin/work/avm/srcs/main.cpp
+
+CMakeFiles/avm.dir/srcs/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avm.dir/srcs/main.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexandreroulin/work/avm/srcs/main.cpp > CMakeFiles/avm.dir/srcs/main.cpp.i
+
+CMakeFiles/avm.dir/srcs/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avm.dir/srcs/main.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexandreroulin/work/avm/srcs/main.cpp -o CMakeFiles/avm.dir/srcs/main.cpp.s
+
 # Object files for target avm
 avm_OBJECTS = \
-"CMakeFiles/avm.dir/srcs/main.cpp.o" \
 "CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o" \
 "CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o" \
-"CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o"
+"CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o" \
+"CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o" \
+"CMakeFiles/avm.dir/srcs/AvmException.cpp.o" \
+"CMakeFiles/avm.dir/srcs/main.cpp.o"
 
 # External object files for target avm
 avm_EXTERNAL_OBJECTS =
 
-avm: CMakeFiles/avm.dir/srcs/main.cpp.o
 avm: CMakeFiles/avm.dir/srcs/avm/AvmController.cpp.o
 avm: CMakeFiles/avm.dir/srcs/avm/AvmModels.cpp.o
 avm: CMakeFiles/avm.dir/srcs/avm/AvmParser.cpp.o
+avm: CMakeFiles/avm.dir/srcs/avm/AvmView.cpp.o
+avm: CMakeFiles/avm.dir/srcs/AvmException.cpp.o
+avm: CMakeFiles/avm.dir/srcs/main.cpp.o
 avm: CMakeFiles/avm.dir/build.make
 avm: CMakeFiles/avm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable avm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alexandreroulin/work/avm/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable avm"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/avm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

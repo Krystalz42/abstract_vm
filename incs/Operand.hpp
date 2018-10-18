@@ -7,7 +7,10 @@
 
 #include <avm/AvmModels.hpp>
 #include <iostream>
+#include <cmath>
+#include <regex>
 #include "IOperand.hpp"
+#include "AvmException.hpp"
 
 template<typename T>
 class Operand : virtual public IOperand {
@@ -15,31 +18,49 @@ private:
 
 	T _value;
 	eOperandType _type;
-	std::string _value_string;
+	std::string const _value_string;
+	int _precision;
 	AvmModels am;
 
-	Operand();
 
 public:
-	Operand(IOperand const *);
+	Operand() = delete;
+
+	explicit Operand(IOperand const *);
+
+	Operand(Operand const &o);
 
 	Operand(eOperandType, std::string const &);
 
-	int getPrecision() const override;
+	int getPrecision() const final;
 
-	eOperandType getType() const override;
+	eOperandType getType() const final;
 
-	const IOperand *operator+(IOperand const &operand) const override;
+	Operand &operator=(Operand const &io);
 
-	const IOperand *operator-(IOperand const &operand) const override;
+	bool operator==(IOperand const &rhs) const final;
 
-	const IOperand *operator*(IOperand const &operand) const override;
+	bool operator!=(IOperand const &rhs) const final;
 
-	const IOperand *operator/(IOperand const &operand) const override;
+	bool operator<(IOperand const &rhs) const final;
 
-	const IOperand *operator%(IOperand const &operand) const override;
+	bool operator>(IOperand const &rhs) const final;
 
-	const std::string &toString() const override;
+	bool operator<=(IOperand const &rhs) const final;
+
+	bool operator>=(IOperand const &rhs) const final;
+
+	const IOperand *operator+(IOperand const &io) const final;
+
+	const IOperand *operator-(IOperand const &io) const final;
+
+	const IOperand *operator*(IOperand const &io) const final;
+
+	const IOperand *operator/(IOperand const &io) const final;
+
+	const IOperand *operator%(IOperand const &io) const final;
+
+	const std::string &toString() const final;
 };
 
 /** Static **/
@@ -49,22 +70,39 @@ template<typename T>
 Operand<T>::Operand(eOperandType type, std::string const &s)
 		:    _value(std::stod(s)),
 			 _type(type),
-			 _value_string(s) {
+			 _value_string(std::to_string(_value)) {
+	std::regex rgx(R"([0-9]+\.([0-9]*[1-9]))");
+	std::smatch match;
 
+	if (std::regex_search(_value_string.begin(), _value_string.end(), match,
+						  rgx))
+		_precision = static_cast<int>(match[1].length());
+	else
+		_precision = 0;
 }
 
 template<typename T>
 Operand<T>::Operand(IOperand const *io)
 		: _value(std::stod(io->toString())),
 		  _type(io->getType()),
-		  _value_string(io->toString()) {
-
+		  _value_string(std::to_string(_value)),
+		  _precision(io->getPrecision()) {
 }
+
 
 /** Public **/
 template<typename T>
+Operand<T>::Operand(Operand const &o)
+		: _value(o._value),
+		  _type(o._type),
+		  _value_string(o._value_string),
+		  _precision(o._precision) {
+	*this = o;
+}
+
+template<typename T>
 int Operand<T>::getPrecision() const {
-	return 0;
+	return _precision;
 }
 
 template<typename T>
@@ -81,28 +119,81 @@ const std::string &Operand<T>::toString() const {
 
 template<typename T>
 const IOperand *Operand<T>::operator+(IOperand const &io) const {
-	auto &e = static_cast<Operand<double>>(&io);
-//	return am.createOperand(_type, std::to_string(_value + e._value));
+	double d = std::stod(io.toString()) + _value;
+	return am.createOperand((_type > io.getType() ? _type : io.getType()),
+							std::to_string(d));
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator-(IOperand const &) const {
-	return nullptr;
+const IOperand *Operand<T>::operator-(IOperand const &io) const {
+	double d = std::stod(io.toString()) - _value;
+	return am.createOperand((_type > io.getType() ? _type : io.getType()),
+							std::to_string(d));
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator*(IOperand const &) const {
-	return nullptr;
+const IOperand *Operand<T>::operator*(IOperand const &io) const {
+	double d = std::stod(io.toString()) * _value;
+	return am.createOperand((_type > io.getType() ? _type : io.getType()),
+							std::to_string(d));
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator/(IOperand const &) const {
-	return nullptr;
+const IOperand *Operand<T>::operator/(IOperand const &io) const {
+	if (_value == 0)
+		throw AvmException::Runtime("div : divide by 0");
+	double d = std::stod(io.toString()) / _value;
+	return am.createOperand((_type > io.getType() ? _type : io.getType()),
+							std::to_string(d));
 }
 
 template<typename T>
-const IOperand *Operand<T>::operator%(IOperand const &) const {
-	return nullptr;
+const IOperand *Operand<T>::operator%(IOperand const &io) const {
+	if (_value == 0)
+		throw AvmException::Runtime("mod : modulo by 0");
+	return am.createOperand((_type > io.getType() ? _type : io.getType()),
+							std::to_string(std::fmod(_value, std::stod(
+									io.toString()))));
+}
+
+template<typename T>
+bool Operand<T>::operator<(IOperand const &rhs) const {
+	return _value < std::stod(rhs.toString());
+}
+
+template<typename T>
+bool Operand<T>::operator>(IOperand const &rhs) const {
+	return _value > std::stod(rhs.toString());
+}
+
+template<typename T>
+bool Operand<T>::operator<=(IOperand const &rhs) const {
+	return _value <= std::stod(rhs.toString());
+}
+
+template<typename T>
+bool Operand<T>::operator>=(IOperand const &rhs) const {
+	return _value >= std::stod(rhs.toString());
+}
+
+template<typename T>
+bool Operand<T>::operator==(IOperand const &rhs) const {
+	return _value == std::stod(rhs.toString());
+}
+
+template<typename T>
+bool Operand<T>::operator!=(IOperand const &rhs) const {
+	return _value != std::stod(rhs.toString());
+}
+
+template<typename T>
+Operand<T> &Operand<T>::operator=(Operand const &io) {
+	if (this != &io) {
+		_value = io._value;
+		_type = io._type;
+		_value_string = io._value_string;
+	}
+	return *this;
 }
 
 

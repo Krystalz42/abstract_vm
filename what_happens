@@ -1,0 +1,1 @@
+abstract vm : program close without calling 'exit'

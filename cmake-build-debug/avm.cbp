@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/alexandreroulin/work/avm/incs/AvmException.hpp">
+			<Option target="avm"/>
+		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/incs/IOperand.hpp">
 			<Option target="avm"/>
 		</Unit>
@@ -105,6 +108,12 @@
 		<Unit filename="/Users/alexandreroulin/work/avm/incs/avm/AvmParser.hpp">
 			<Option target="avm"/>
 		</Unit>
+		<Unit filename="/Users/alexandreroulin/work/avm/incs/avm/AvmView.hpp">
+			<Option target="avm"/>
+		</Unit>
+		<Unit filename="/Users/alexandreroulin/work/avm/srcs/AvmException.cpp">
+			<Option target="avm"/>
+		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/srcs/avm/AvmController.cpp">
 			<Option target="avm"/>
 		</Unit>
@@ -112,6 +121,9 @@
 			<Option target="avm"/>
 		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/srcs/avm/AvmParser.cpp">
+			<Option target="avm"/>
+		</Unit>
+		<Unit filename="/Users/alexandreroulin/work/avm/srcs/avm/AvmView.cpp">
 			<Option target="avm"/>
 		</Unit>
 		<Unit filename="/Users/alexandreroulin/work/avm/srcs/main.cpp">
