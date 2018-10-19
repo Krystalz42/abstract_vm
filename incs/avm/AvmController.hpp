@@ -19,17 +19,18 @@ private:
 
 	int _option;
 
+	typedef void (AvmController::*function)(IOperand const *);
+	std::map<eInstruction, function> const _fun_map;
+
 	MutantStack<IOperand const *> _stack;
 
-	AvmModels _am;
+	AvmFactory _am;
 
 	AvmView		*_av;
 
 	std::string			buffer;
 
-	typedef void (AvmController::*function)(IOperand const *);
 
-	std::map<eInstruction, function> const _fun_map;
 
 	std::map<eInstruction, function> createFunctionMap();
 
@@ -42,16 +43,6 @@ private:
 	void _assert(IOperand const *);
 
 	void _add(IOperand const *);
-
-	IOperand const *_addWork(IOperand const *io1, IOperand const *io2) const;
-
-	IOperand const *_subWork(IOperand const *io1, IOperand const *io2) const;
-
-	IOperand const *_mulWork(IOperand const *io1, IOperand const *io2) const;
-
-	IOperand const *_divWork(IOperand const *io1, IOperand const *io2) const;
-
-	IOperand const *_modWork(IOperand const *io1, IOperand const *io2) const;
 
 	void _sub(IOperand const *);
 
@@ -70,6 +61,8 @@ private:
 	void _mod(IOperand const *);
 
 	void _print(IOperand const *);
+
+	void _clone(IOperand const *);
 
 	void _exit(IOperand const *);
 
@@ -95,7 +88,7 @@ public:
 #endif //__AVM_AVM_CONTROLLER_HPP__
 
 
-// AvmParser (read) >> AvmModels(createData) >> AvmController (stock data) >> AvmView (show data)
+// AvmParser (read) >> AvmFactory(createData) >> AvmController (stock data) >> AvmView (show data)
 
 //
 //

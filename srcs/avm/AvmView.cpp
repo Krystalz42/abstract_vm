@@ -3,18 +3,14 @@
 //
 
 #include <avm/AvmView.hpp>
-//  ___________________
-// | double 42.424242  |
-//  -------------------
-// | double 42.424242  |
-
 #define COLS_WINS    COLS / 2
 #define COLS_WINS_RENDER    COLS_WINS - 3
 
-std::ofstream f("./log");
 
 /** Static **/
+
 /** Constructor **/
+
 AvmView::AvmView(MutantStack<const IOperand *> &_stack_operand)
 		: _stack_operand(_stack_operand) {
 	_data_instruction[PUSH] = "push";
@@ -32,6 +28,7 @@ AvmView::AvmView(MutantStack<const IOperand *> &_stack_operand)
 	_data_instruction[MAX] = "max";
 	_data_instruction[MIN] = "min";
 	_data_instruction[AVG] = "avg";
+	_data_instruction[CLONE] = "clone";
 	_data_operand[INT_8] = "int8_t";
 	_data_operand[INT_16] = "int16_t";
 	_data_operand[INT_32] = "int32_t";
@@ -42,14 +39,12 @@ AvmView::AvmView(MutantStack<const IOperand *> &_stack_operand)
 /** Public **/
 
 void AvmView::initView() {
-	f << "Hello" << std::endl;
 	initscr();
 	noecho();
 	keypad(stdscr, true);
 	curs_set(false);
 	_instruction_view = subwin(stdscr, LINES - 1, COLS_WINS, 1, 0);
 	_stack_view = subwin(stdscr, LINES - 1, COLS_WINS, 1, COLS / 2);
-	f << "Lines : " << LINES << " Cols : " << COLS << std::endl;
 	box(_stack_view, ACS_VLINE, ACS_HLINE);
 	box(_instruction_view, ACS_VLINE, ACS_HLINE);
 	wrefresh(_stack_view);
@@ -77,6 +72,12 @@ std::string AvmView::getLine() {
 	return std::string(str);
 }
 
+void AvmView::printError(char const *what) {
+	mvprintw(0, COLS - std::strlen(what), what);
+}
+void AvmView::print(char const c) {
+	mvaddch(0, COLS - 1, c);
+}
 /** Private **/
 void AvmView::addInstruction(eInstruction ei, IOperand const *io) {
 	std::stringstream ss;
@@ -113,27 +114,27 @@ void AvmView::refreshOperand() {
 	wclear(_stack_view);
 	auto it = _stack_operand.rbegin();
 	auto ite = _stack_operand.crend();
-	int index = 0;
+	int index = (static_cast<int>(_stack_operand.size()) > LINES - 3 ? LINES - 3
+												   : _stack_operand.size());
 	for (; it != ite; ++it) {
 		createBox(index, *it);
-		index++;
+		index--;
 	}
 	box(_stack_view, ACS_VLINE, ACS_HLINE);
 	wrefresh(_stack_view);
-	//print
 }
 
 void AvmView::createBox(int index, IOperand const *io) {
-	if (index < LINES - 2) {
+	if (index > 0) {
 		std::stringstream ss;
 		ss << std::fixed << std::setprecision(io->getPrecision())
 		   << std::stod(io->toString());
 		mvwprintw(_stack_view,
-				  LINES - 3 - (_stack_operand.size() - 1) % (LINES - 2) + index,
+				  LINES - 3 - index + 1,
 				  (COLS_WINS_RENDER - ss.str().size()) / 2, "| %s |",
 				  ss.str().c_str());
 	}
-	f << std::endl;
+
 }
 
 /** Operator **/
@@ -145,3 +146,5 @@ AvmView::~AvmView() {
 	curs_set(1);
 	endwin();
 }
+
+

@@ -1,11 +1,16 @@
+
 #include <iostream>
-
-
 #include <avm/AvmParser.hpp>
 #include <regex>
-#include <zconf.h>
+
+void usage(char const *error) {
+	char const *usage = "\t./avm [-v -s] file";
+	std::cerr << "usage : " << error << std::endl << usage << std::endl;
+	exit(EXIT_FAILURE);
+}
 
 int main(int argc, char **argv) {
+
 	std::regex r(R"(-([s|v]{1}))");
 	std::smatch match;
 	std::ifstream file;
@@ -14,17 +19,22 @@ int main(int argc, char **argv) {
 	for (int index = 1; index < argc; ++index) {
 		std::string const s = argv[index];
 		if (std::regex_search(s.begin(), s.end(), match, r)) {
-			option |= match[1].compare("v") == 0 ? OPT_VISU : 0;
-			option |= match[1].compare("s") == 0 ? OPT_SLOW : 0;
+			if (match[1].compare("v") == 0) option |= OPT_VISU;
+			else if (match[1].compare("s") == 0) option |= OPT_SLOW;
+			else usage("bad option");
 		} else {
 			option |= OPT_FILE;
-//			std::cout << s << std::endl;
 			if (!file.is_open())
 				file.open(s);
 		}
 	}
-	std::cout << option << std::endl;
+	if (!file.is_open() && option & OPT_FILE) {
+		usage("invalid file");
+	}
 	AvmParser ap(option);
-	if (option & OPT_FILE) ap.fromFile(file); else ap.fromStdin();
-	return 0;
+	if (option & OPT_FILE)
+		ap.fromFile(file);
+	else
+		ap.fromStdin();
+	return 1;
 }

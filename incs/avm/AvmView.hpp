@@ -46,6 +46,9 @@ public:
 
 	std::string getLine();
 
+	void printError(char const * );
+	void print(char const c);
+
 	virtual ~AvmView();
 
 };

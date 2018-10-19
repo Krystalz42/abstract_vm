@@ -47,7 +47,7 @@ SRCS = \
 			AvmException.cpp												\
 			avm/AvmController.cpp											\
 			avm/AvmView.cpp													\
-			avm/AvmModels.cpp												\
+			avm/AvmFactory.cpp												\
 			avm/AvmParser.cpp												\
 # ---------------------------------------------------------------------------- #
 # /!\ COLOR FOR PRINTF /!\                                                     #
@@ -83,11 +83,10 @@ CPPFLAGS	= \
 			  -I$(DIR_INCS)							\
 
 CFLAGS		= \
-			-std=c++14						\
-			-fsanitize=address					\
-			-g3							\
-#			-Wall -Werror -Wextra					\
-
+			-std=c++11								\
+			-Wall -Werror -Wextra					\
+			-fsanitize=address						\
+			-g3										\
 
 # ---------------------------------------------------------------------------- #
 # /!\ SOURCE NORMALIZATION AND COMPILATION RULES /!\                           #

@@ -10,7 +10,7 @@
 #include <map>
 #include <avm.hpp>
 #include "AvmController.hpp"
-#include "AvmModels.hpp"
+#include "AvmFactory.hpp"
 #include <boost/regex.hpp>
 #include <iostream>
 
@@ -30,23 +30,22 @@ private:
 	int _option;
 	AvmController *_ac;
 	AvmView *_av;
-	AvmModels *_am;
+	AvmFactory *_am;
 	std::map<std::string, eInstruction> const _instruction;
 	std::map<std::string, eOperandType> const _operand;
 
 	eInstruction parseInstruction(std::string const &s) const;
 
-	void cleanAvm();
 
 	eOperandType parseOperandType(std::string const &s) const;
+
+	void cleanAvm();
 
 	void parseString(std::string const &s);
 
 	std::string parseValue(std::string const &s) const;
 
-	const std::map<std::string, eInstruction>
-
-	createInstructionMap();
+	const std::map<std::string, eInstruction> createInstructionMap();
 
 	const std::map<std::string, eOperandType> createOperandMap();
 };

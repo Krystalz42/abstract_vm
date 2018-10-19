@@ -33,6 +33,10 @@ enum eInstruction {
 	MAX,		//12
 	MIN,		//13
 	AVG,		//14
+	CLONE		//15
 };
 
 #endif //AVM_AVM_HPP
+
+//ASSERT LEAKS
+//OVERFLOW LEAKS

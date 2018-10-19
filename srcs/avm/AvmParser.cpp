@@ -21,7 +21,7 @@ AvmParser::AvmParser(int option) :
 		_option(option),
 		_ac(new AvmController(option)),
 		_av(_ac->getAv()),
-		_am(new AvmModels()),
+		_am(new AvmFactory()),
 		_instruction(createInstructionMap()),
 		_operand(createOperandMap()) {
 }
@@ -56,6 +56,7 @@ void AvmParser::fromStdin() {
 /** Private **/
 
 void AvmParser::parseString(std::string const &s) {
+	std::stringstream ss;
 	eInstruction ei;
 	if (s.find(";;") == 0)
 		std::cin.setstate(std::__1::istream::eofbit);
@@ -73,38 +74,37 @@ void AvmParser::parseString(std::string const &s) {
 
 		} else if (ei == EXIT) {
 			cleanAvm();
+			exit(EXIT_SUCCESS);
 		} else {
 			_ac->execute(ei);
 		}
+		return;
 
 	} catch (AvmException::AvmError &e) {
-		std::cout << "avm error : " << e.what() << std::endl;
-		cleanAvm();
+		ss << "avm error : " << e.what() << std::endl;
 	}
 	catch (AvmException::Parsing &e) {
-		std::cout << "avm parsing : " << e.what() << std::endl;
-		cleanAvm();
+		ss << "avm parsing : " << e.what() << std::endl;
 	}
 	catch (AvmException::StackError &e) {
-		std::cout << "stack error : " << e.what() << std::endl;
-		cleanAvm();
+		ss << "stack error : " << e.what() << std::endl;
 	}
 	catch (AvmException::Overflow &e) {
-		std::cout << "overflow : " << e.what() << std::endl;
-		cleanAvm();
+		ss << "overflow : " << e.what() << std::endl;
 	}
 	catch (AvmException::Underflow &e) {
-		std::cout << "underflow : " << e.what() << std::endl;
-		cleanAvm();
+		ss << "underflow : " << e.what() << std::endl;
 	}
 	catch (AvmException::Runtime &e) {
-		std::cout << "runtime : " << e.what() << std::endl;
-		cleanAvm();
+		ss << "runtime : " << e.what() << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-		cleanAvm();
+		ss << e.what() << std::endl;
 	}
+	if (_option & OPT_VISU)
+		_av->printError(ss.str().c_str());
+	else
+		std::cout << ss.str();
 }
 
 eInstruction AvmParser::parseInstruction(std::string const &s) const {
@@ -132,6 +132,7 @@ std::string AvmParser::parseValue(std::string const &s) const {
 	if (std::regex_search(s.begin(), s.end(), match, rgx)) {
 		return match[1];
 	}
+	std::cout << "throw" << std::endl;
 	throw AvmException::Parsing("value bad format");
 }
 
@@ -152,6 +153,7 @@ std::map<std::string, eInstruction> const AvmParser::createInstructionMap() {
 	ins["max"] = MAX;
 	ins["min"] = MIN;
 	ins["avg"] = AVG;
+	ins["clone"] = CLONE;
 	return ins;
 }
 
@@ -180,8 +182,5 @@ AvmParser::~AvmParser() {
 		std::cerr
 				<< "abstract vm : program close without calling \'exit\'"
 				<< std::endl;
-	delete _am;
-	delete _ac;
+	cleanAvm();
 }
-
-

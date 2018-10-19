@@ -28,7 +28,8 @@ void AvmController::execute(
 	if (_option & OPT_SLOW && (_option & OPT_FILE)) {
 		_av->printInstruction(ei);
 		if (io != nullptr)
-			std::cout << std::fixed << std::setprecision(io->getPrecision()) << std::stod(io->toString());
+			std::cout << std::fixed << std::setprecision(io->getPrecision())
+					  << std::stod(io->toString());
 		std::getline(std::cin, buffer);
 	}
 
@@ -42,6 +43,123 @@ void AvmController::execute(
 }
 
 /** Private **/
+
+void AvmController::_push(IOperand const *io) {
+	_stack.push(io);
+}
+
+void AvmController::_pop(IOperand const *) {
+	if (_stack.empty())
+		throw AvmException::StackError("pop : empty stack");
+	IOperand const *io1 = _stack.top();
+	_stack.pop();
+	delete io1;
+}
+
+void AvmController::_assert(IOperand const *io) {
+	if (io->toString() != _stack.top()->toString()) {
+		delete io;
+		throw AvmException::StackError("assert : value isn't equals");
+	}
+	if (io->getType() != _stack.top()->getType()) {
+		delete io;
+		throw AvmException::StackError("assert : type isn't equals");
+	}
+	delete io;
+}
+
+void AvmController::_add(IOperand const *) {
+	if (_stack.size() < 2)
+		throw AvmException::StackError("add : size of stack less than two");
+
+	IOperand const *io_ptr = _stack.top();
+
+	IOperand const &io1 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	io_ptr = _stack.top();
+	IOperand const &io2 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	_push(io2 + io1);
+}
+
+
+void AvmController::_sub(IOperand const *) {
+	if (_stack.size() < 2)
+		throw AvmException::StackError("sub : size of stack less than two");
+
+	IOperand const *io_ptr = _stack.top();
+
+	IOperand const &io1 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	io_ptr = _stack.top();
+	IOperand const &io2 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	_push(io2 - io1);
+}
+
+
+void AvmController::_mul(IOperand const *) {
+	if (_stack.size() < 2)
+		throw AvmException::StackError("mul : size of stack less than two");
+
+	IOperand const *io_ptr = _stack.top();
+
+	IOperand const &io1 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	io_ptr = _stack.top();
+	IOperand const &io2 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	_push(io2 * io1);
+}
+
+void AvmController::_div(IOperand const *) {
+	if (_stack.size() < 2)
+		throw AvmException::StackError("div : size of stack less than two");
+
+	IOperand const *io_ptr = _stack.top();
+
+	IOperand const &io1 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	io_ptr = _stack.top();
+	IOperand const &io2 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	_push(io2 / io1);
+}
+
+void AvmController::_mod(IOperand const *) {
+	if (_stack.size() < 2)
+		throw AvmException::StackError("mod : size of stack less than two");
+
+	IOperand const *io_ptr = _stack.top();
+
+	IOperand const &io1 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	io_ptr = _stack.top();
+	IOperand const &io2 = *io_ptr;
+	_stack.pop();
+
+	delete io_ptr;
+	_push(io2 % io1);
+}
+
 
 void AvmController::_swap(IOperand const *) {
 	if (_stack.size() < 2)
@@ -57,12 +175,17 @@ void AvmController::_swap(IOperand const *) {
 void AvmController::_max(IOperand const *) {
 	if (_stack.size() < 2)
 		throw AvmException::StackError("add : size of stack less than two");
-
 	IOperand const *io1 = _stack.top();
 	_stack.pop();
 	IOperand const *io2 = _stack.top();
 	_stack.pop();
-	if (io1->operator>(*io2)) _push(io1); else _push(io2);
+	if (*io1 > *io2) {
+		_push(io1);
+		delete io2;
+	} else {
+		_push(io2);
+		delete io1;
+	}
 }
 
 void AvmController::_min(IOperand const *) {
@@ -73,7 +196,13 @@ void AvmController::_min(IOperand const *) {
 	_stack.pop();
 	IOperand const *io2 = _stack.top();
 	_stack.pop();
-	if (io1->operator<(*io2)) _push(io1); else _push(io2);
+	if (*io1 < *io2) {
+		_push(io1);
+		delete io2;
+	} else {
+		delete io1;
+		_push(io2);
+	}
 }
 
 void AvmController::_avg(IOperand const *) {
@@ -84,110 +213,27 @@ void AvmController::_avg(IOperand const *) {
 	_div(nullptr);
 }
 
-void AvmController::_push(IOperand const *io) {
-	_stack.push(io);
-}
 
-void AvmController::_pop(IOperand const *) {
-	if (_stack.empty())
-		throw AvmException::StackError("pop : empty stack");
-	delete _stack.top();
-	_stack.pop();
-}
 
 void AvmController::_dump(IOperand const *) {
 	if (!(_option & OPT_VISU))
 		std::for_each(_stack.crbegin(), _stack.crend(), print);
 }
 
-void AvmController::_assert(IOperand const *io) {
-	if (io->toString() != _stack.top()->toString())
-		throw AvmException::StackError("assert : value isn't equals");
-	if (io->getType() != _stack.top()->getType())
-		throw AvmException::StackError("assert : type isn't equals");
-}
-
-void AvmController::_add(IOperand const *) {
-	if (_stack.size() < 2)
-		throw AvmException::StackError("add : size of stack less than two");
-
-	IOperand const *io1 = _stack.top();
-	_stack.pop();
-	IOperand const *io2 = _stack.top();
-	_stack.pop();
-	_push(_addWork(io1, io2));
-}
-
-IOperand const *AvmController::_addWork(IOperand const *io1,
-										IOperand const *io2) const {
-	return io1->operator+(*io2);
-}
-
-void AvmController::_sub(IOperand const *) {
-	if (_stack.size() < 2)
-		throw AvmException::StackError("sub : size of stack less than two");
-	IOperand const *io1 = _stack.top();
-	_stack.pop();
-	IOperand const *io2 = _stack.top();
-	_stack.pop();
-	_push(_subWork(io1, io2));
-}
-
-IOperand const *
-AvmController::_subWork(IOperand const *io1, IOperand const *io2) const {
-	return io1->operator-(*io2);
-}
-
-void AvmController::_mul(IOperand const *) {
-	if (_stack.size() < 2)
-		throw AvmException::StackError("mul : size of stack less than two");
-	IOperand const *io1 = _stack.top();
-	_stack.pop();
-	IOperand const *io2 = _stack.top();
-	_stack.pop();
-	_push(_mulWork(io1, io2));
-}
-
-IOperand const *
-AvmController::_mulWork(IOperand const *io1, IOperand const *io2) const {
-	return io1->operator*(*io2);
-}
-
-void AvmController::_div(IOperand const *) {
-	if (_stack.size() < 2)
-		throw AvmException::StackError("div : size of stack less than two");
-	IOperand const *io1 = _stack.top();
-	_stack.pop();
-	IOperand const *io2 = _stack.top();
-	_stack.pop();
-	_push(_divWork(io1, io2));
-}
-
-IOperand const *
-AvmController::_divWork(IOperand const *io1, IOperand const *io2) const {
-	return io1->operator/(*io2);
-}
-
-void AvmController::_mod(IOperand const *) {
-	if (_stack.size() < 2)
-		throw AvmException::StackError("mod : size of stack less than two");
-	IOperand const *io1 = _stack.top();
-	_stack.pop();
-	IOperand const *io2 = _stack.top();
-	_stack.pop();
-	_push(_modWork(io1, io2));
-}
-
-IOperand const *
-AvmController::_modWork(IOperand const *io1, IOperand const *io2) const {
-	return io1->operator%(*io2);
-}
 
 void AvmController::_print(IOperand const *) {
 	IOperand const *io;
 	io = _stack.top();
-	if (io->getType() == INT_8 && !(_option & OPT_VISU))
-		std::cout << static_cast<int8_t >(std::stoi(io->toString()));
+	if (io->getType() == INT_8) {
+		if (!(_option & OPT_VISU)) { std::cout << static_cast<int8_t >(std::stoi(io->toString())); }
+		else { _av->print(static_cast<int8_t >(std::stoi(io->toString()))); }
+	}
+
+}
+
+void AvmController::_clone(IOperand const *) {
+	IOperand const * io = _stack.top();
+	_push(_am.createOperand(io->getType(), io->toString()));
 }
 
 void AvmController::_exit(IOperand const *) {
@@ -222,6 +268,7 @@ AvmController::createFunctionMap() {
 	fm[MAX] = &AvmController::_max;
 	fm[MIN] = &AvmController::_min;
 	fm[AVG] = &AvmController::_avg;
+	fm[CLONE] = &AvmController::_clone;
 	return fm;
 }
 
@@ -240,6 +287,7 @@ AvmController::~AvmController() {
 	}
 	delete _av;
 }
+
 
 
 

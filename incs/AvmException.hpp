@@ -6,10 +6,11 @@
 #define AVM_AVMEXCEPTION_HPP
 
 #include <exception>
+#include <stdexcept>
 
 class AvmException {
 public:
-	class Parsing : virtual public std::exception {
+	class Parsing : virtual public std::invalid_argument {
 	private:
 		const char *_what;
 	public:
@@ -17,14 +18,12 @@ public:
 
 		Parsing(Parsing const &) noexcept;
 
-		Parsing &operator=(Parsing const &) = delete;
+		Parsing &operator=(Parsing const &);
 
 		explicit Parsing(char const *what) noexcept;
-
-		const char *what() const noexcept final;
 	};
 
-	class StackError : virtual public std::exception {
+	class StackError : virtual public std::logic_error {
 	private:
 		const char *_what;
 	public:
@@ -32,11 +31,10 @@ public:
 
 		StackError(StackError const &) noexcept;
 
-		StackError &operator=(StackError const &) = delete;
+		StackError &operator=(StackError const &);
 
 		explicit StackError(char const *what) noexcept;
 
-		const char *what() const noexcept final;
 	};
 
 	class AvmError : virtual public std::exception {
@@ -45,17 +43,16 @@ public:
 	public:
 		AvmError(AvmError const &) noexcept;
 
-		AvmError &operator=(AvmError const &) = delete;
+		AvmError &operator=(AvmError const &);
 
 		AvmError() = delete;
 
 
 		explicit AvmError(char const *what) noexcept;
 
-		const char *what() const noexcept final;
 	};
 
-	class Overflow : virtual public std::exception {
+class Overflow : virtual public std::overflow_error {
 	private:
 		const char *_what;
 	public:
@@ -63,14 +60,13 @@ public:
 
 		Overflow(Overflow const &) noexcept;
 
-		Overflow &operator=(Overflow const &) = delete;
+		Overflow &operator=(Overflow const &);
 
 		explicit Overflow(char const *what) noexcept;
 
-		const char *what() const noexcept final;
 	};
 
-	class Underflow : virtual public std::exception {
+	class Underflow : virtual public std::underflow_error {
 	private:
 		const char *_what;
 	public:
@@ -78,13 +74,12 @@ public:
 
 		Underflow(Underflow const &) noexcept;
 
-		Underflow &operator=(Underflow const &) = delete;
+		Underflow &operator=(Underflow const &);
 
 		explicit Underflow(char const *what) noexcept;
 
-		const char *what() const noexcept final;
 	};
-	class Runtime : virtual public std::exception {
+	class Runtime : virtual public std::runtime_error {
 	private:
 		const char *_what;
 	public:
@@ -92,11 +87,10 @@ public:
 
 		Runtime(Runtime const &) noexcept;
 
-		Runtime &operator=(Runtime const &) = delete;
+		Runtime &operator=(Runtime const &);
 
 		explicit Runtime(char const *what) noexcept;
 
-		const char *what() const noexcept final;
 	};
 
 };

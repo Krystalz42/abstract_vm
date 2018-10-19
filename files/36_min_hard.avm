@@ -1,0 +1,26 @@
+; -------------------
+; 34_avg_hard
+; -------------------
+
+push int8(30)
+push int8(54)
+min
+
+push int16(1)
+min
+
+push int32(12)
+min
+
+push float(6.4242424242)
+min
+
+push double(0.21212190)
+min
+
+push double(0.21212189)
+min
+
+dump
+
+exit

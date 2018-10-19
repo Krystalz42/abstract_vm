@@ -1,8 +1,0 @@
-push int32(42)
-push int16(21)
-add
-dump
-push int8(42)
-print
-sub
-exit

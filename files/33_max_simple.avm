@@ -1,0 +1,9 @@
+; -------------------
+; 33_max_simple
+; -------------------
+
+push int8(1)
+push int8(42)
+max
+dump
+exit

@@ -1,0 +1,10 @@
+; -------------------
+; 31_avg_simple
+; -------------------
+
+push int8(30)
+push int8(54)
+avg
+print
+dump
+exit
