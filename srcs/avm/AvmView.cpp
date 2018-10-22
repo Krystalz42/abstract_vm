@@ -3,6 +3,7 @@
 //
 
 #include <avm/AvmView.hpp>
+
 #define COLS_WINS    COLS / 2
 #define COLS_WINS_RENDER    COLS_WINS - 3
 
@@ -29,6 +30,7 @@ AvmView::AvmView(MutantStack<const IOperand *> &_stack_operand)
 	_data_instruction[MIN] = "min";
 	_data_instruction[AVG] = "avg";
 	_data_instruction[CLONE] = "clone";
+
 	_data_operand[INT_8] = "int8_t";
 	_data_operand[INT_16] = "int16_t";
 	_data_operand[INT_32] = "int32_t";
@@ -73,16 +75,21 @@ std::string AvmView::getLine() {
 }
 
 void AvmView::printError(char const *what) {
-	mvprintw(0, COLS - std::strlen(what), what);
+	mvprintw(0, static_cast<int>(COLS - std::strlen(what)), what);
 }
+
 void AvmView::print(char const c) {
 	mvaddch(0, COLS - 1, c);
 }
+
+std::ofstream f("./error");
+
 /** Private **/
 void AvmView::addInstruction(eInstruction ei, IOperand const *io) {
 	std::stringstream ss;
 	ss << _data_instruction[ei];
 	if (io != nullptr) {
+		f << "Instr : " << ei << "type is null : " << io->getType() << std::endl << std::endl;
 		ss << " ";
 		ss << _data_operand[io->getType()];
 		ss << " ";
@@ -114,8 +121,9 @@ void AvmView::refreshOperand() {
 	wclear(_stack_view);
 	auto it = _stack_operand.rbegin();
 	auto ite = _stack_operand.crend();
-	int index = (static_cast<int>(_stack_operand.size()) > LINES - 3 ? LINES - 3
-												   : _stack_operand.size());
+	int index = static_cast<int>(static_cast<int>(_stack_operand.size()) >
+								 LINES - 3 ? LINES - 3
+										   : _stack_operand.size());
 	for (; it != ite; ++it) {
 		createBox(index, *it);
 		index--;

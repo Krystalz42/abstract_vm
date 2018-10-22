@@ -85,8 +85,6 @@ CPPFLAGS	= \
 CFLAGS		= \
 			-std=c++11								\
 			-Wall -Werror -Wextra					\
-			-fsanitize=address						\
-			-g3										\
 
 # ---------------------------------------------------------------------------- #
 # /!\ SOURCE NORMALIZATION AND COMPILATION RULES /!\                           #

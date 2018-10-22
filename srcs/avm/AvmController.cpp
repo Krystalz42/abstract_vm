@@ -34,7 +34,7 @@ void AvmController::execute(
 	}
 
 	(this->*_fun_map.at(ei))(io);
-	if (_option & OPT_VISU) {
+	if (_option & OPT_VISU && ei != ASSERT) {
 		_av->newInput(ei, io);
 	}
 	if (_option & OPT_VISU && _option & OPT_FILE)
