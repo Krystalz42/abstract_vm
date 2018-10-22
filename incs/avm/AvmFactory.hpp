@@ -17,7 +17,7 @@ class AvmFactory {
 private:
 	typedef IOperand const *(AvmFactory::*function)(std::string const &) const;
 
-	const std::map<eOperandType, function> createData();
+	std::map<eOperandType, function> const createData();
 
 	std::map<eOperandType, function> const _data;
 
@@ -37,9 +37,7 @@ private:
 public:
 	AvmFactory();
 
-	IOperand const *
-	createOperand(eOperandType type, std::string const &value) const;
-
+	IOperand const *createOperand(eOperandType type, std::string const &value) const;
 };
 
 #endif //AVM_AVMMODELS_HPP

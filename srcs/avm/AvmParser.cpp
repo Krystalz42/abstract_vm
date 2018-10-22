@@ -132,7 +132,6 @@ std::string AvmParser::parseValue(std::string const &s) const {
 	if (std::regex_search(s.begin(), s.end(), match, rgx)) {
 		return match[1];
 	}
-	std::cout << "throw" << std::endl;
 	throw AvmException::Parsing("value bad format");
 }
 
