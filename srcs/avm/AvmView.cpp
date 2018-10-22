@@ -82,14 +82,11 @@ void AvmView::print(char const c) {
 	mvaddch(0, COLS - 1, c);
 }
 
-std::ofstream f("./error");
-
 /** Private **/
 void AvmView::addInstruction(eInstruction ei, IOperand const *io) {
 	std::stringstream ss;
 	ss << _data_instruction[ei];
 	if (io != nullptr) {
-		f << "Instr : " << ei << "type is null : " << io->getType() << std::endl << std::endl;
 		ss << " ";
 		ss << _data_operand[io->getType()];
 		ss << " ";

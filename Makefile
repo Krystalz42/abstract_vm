@@ -81,6 +81,7 @@ LDLIBS		= \
 
 CPPFLAGS	= \
 			  -I$(DIR_INCS)							\
+			  -I$(HOME)/.brew/Cellar/boost/1.67.0_1/include/			\
 
 CFLAGS		= \
 			-std=c++11								\
