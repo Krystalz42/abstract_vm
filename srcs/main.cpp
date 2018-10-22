@@ -6,6 +6,7 @@
 void usage(char const *error) {
 	char const *usage = "\t./avm [-v -s] file";
 	std::cerr << "usage : " << error << std::endl << usage << std::endl;
+
 	exit(EXIT_FAILURE);
 }
 
@@ -36,5 +37,6 @@ int main(int argc, char **argv) {
 		ap.fromFile(file);
 	else
 		ap.fromStdin();
+
 	return 1;
 }

@@ -71,93 +71,84 @@ void AvmController::_assert(IOperand const *io) {
 void AvmController::_add(IOperand const *) {
 	if (_stack.size() < 2)
 		throw AvmException::StackError("add : size of stack less than two");
-
-	IOperand const *io_ptr = _stack.top();
-
-	IOperand const &io1 = *io_ptr;
+	IOperand const *io1 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	io_ptr = _stack.top();
-	IOperand const &io2 = *io_ptr;
+	IOperand const *io2 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	_push(io2 + io1);
+	_stack_error.push(io1);
+	_stack_error.push(io2);
+	_push(*io2 + *io1);
+	delete io1;
+	delete io2;
+	_stack_error.pop();
+	_stack_error.pop();
 }
 
 
 void AvmController::_sub(IOperand const *) {
 	if (_stack.size() < 2)
 		throw AvmException::StackError("sub : size of stack less than two");
-
-	IOperand const *io_ptr = _stack.top();
-
-	IOperand const &io1 = *io_ptr;
+	IOperand const *io1 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	io_ptr = _stack.top();
-	IOperand const &io2 = *io_ptr;
+	IOperand const *io2 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	_push(io2 - io1);
+	_stack_error.push(io1);
+	_stack_error.push(io2);
+	_push(*io2 - *io1);
+	delete io1;
+	delete io2;
+	_stack_error.pop();
+	_stack_error.pop();
 }
 
 
 void AvmController::_mul(IOperand const *) {
 	if (_stack.size() < 2)
 		throw AvmException::StackError("mul : size of stack less than two");
-
-	IOperand const *io_ptr = _stack.top();
-
-	IOperand const &io1 = *io_ptr;
+	IOperand const *io1 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	io_ptr = _stack.top();
-	IOperand const &io2 = *io_ptr;
+	IOperand const *io2 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	_push(io2 * io1);
+	_stack_error.push(io1);
+	_stack_error.push(io2);
+	_push(*io2 * *io1);
+	delete io1;
+	delete io2;
+	_stack_error.pop();
+	_stack_error.pop();
 }
 
 void AvmController::_div(IOperand const *) {
 	if (_stack.size() < 2)
 		throw AvmException::StackError("div : size of stack less than two");
 
-	IOperand const *io_ptr = _stack.top();
-
-	IOperand const &io1 = *io_ptr;
+	IOperand const *io1 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	io_ptr = _stack.top();
-	IOperand const &io2 = *io_ptr;
+	IOperand const *io2 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	_push(io2 / io1);
+	_stack_error.push(io1);
+	_stack_error.push(io2);
+	_push(*io2 / *io1);
+	delete io1;
+	delete io2;
+	_stack_error.pop();
+	_stack_error.pop();
 }
 
 void AvmController::_mod(IOperand const *) {
 	if (_stack.size() < 2)
 		throw AvmException::StackError("mod : size of stack less than two");
-
-	IOperand const *io_ptr = _stack.top();
-
-	IOperand const &io1 = *io_ptr;
+	IOperand const *io1 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	io_ptr = _stack.top();
-	IOperand const &io2 = *io_ptr;
+	IOperand const *io2 = _stack.top();
 	_stack.pop();
-
-	delete io_ptr;
-	_push(io2 % io1);
+	_stack_error.push(io1);
+	_stack_error.push(io2);
+	_push(*io2 % *io1);
+	delete io1;
+	delete io2;
+	_stack_error.pop();
+	_stack_error.pop();
 }
 
 
@@ -285,9 +276,10 @@ AvmController::~AvmController() {
 	for (; it != ite; ++it) {
 		delete *it;
 	}
+	auto it_err = _stack_error.begin();
+	auto ite_err = _stack_error.end();
+	for (; it_err != ite_err; ++it_err) {
+		delete *it_err;
+	}
 	delete _av;
 }
-
-
-
-

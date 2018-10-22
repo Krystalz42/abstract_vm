@@ -74,6 +74,7 @@ void AvmParser::parseString(std::string const &s) {
 
 		} else if (ei == EXIT) {
 			cleanAvm();
+
 			exit(EXIT_SUCCESS);
 		} else {
 			_ac->execute(ei);

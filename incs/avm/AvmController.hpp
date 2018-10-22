@@ -23,6 +23,7 @@ private:
 	std::map<eInstruction, function> const _fun_map;
 
 	MutantStack<IOperand const *> _stack;
+	MutantStack<IOperand const *> _stack_error;
 
 	AvmFactory _am;
 
